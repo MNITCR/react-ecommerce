@@ -2,7 +2,6 @@ import { ShoppingBag } from 'lucide-react'
 import React from 'react'
 
 const SmallCard = ({data}) => {
-    console.log(data);
     // const {title, number, iconBg, icon: Icon} = data;
     // console.log(iconBg);
   return (

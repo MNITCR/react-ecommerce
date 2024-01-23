@@ -85,7 +85,7 @@ const WeeklySalesChart = () => {
                                     chartToDisplay == tab.type ?
                                     "inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500":
                                     "inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-                                }>{tab.title}</button>
+                                } key={i}>{tab.title}</button>
                             </li>
                         )
                     })
@@ -97,7 +97,7 @@ const WeeklySalesChart = () => {
         {
             tabs.map((tab, i) =>{
                 if(chartToDisplay === tab.type){
-                    return <Line options={options} data={tab.data} />;
+                    return <Line options={options} data={tab.data} key={i}/>;
                 }
                 return null;
             })
