@@ -72,8 +72,8 @@ const WeeklySalesChart = () => {
 
 
   return (
-    <div className='bg-slate-700 p-8 rounded-lg'>
-        <h2 className='text-xl font-bold'>Best Selling Charts</h2>
+    <div className='dark:bg-slate-700 bg-slate-50 p-8 rounded-lg shadow-xl'>
+        <h2 className='text-xl font-bold text-slate-800 dark:text-slate-50'>Best Selling Charts</h2>
         {/* Tabs */}
         <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
             <ul className="flex flex-wrap -mb-px">

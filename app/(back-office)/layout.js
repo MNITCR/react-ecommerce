@@ -10,7 +10,7 @@ const Layout = ({children}) => {
         <div className="w-full">
             {/* Header */}
             <Navbar/>
-            <main className='ml-60 p-8 bg-slate-950 text-slate-50 min-h-screen mt-16'>
+            <main className='ml-60 p-8 bg-slate-50 dark:bg-slate-950 text-slate-50 min-h-screen mt-16'>
                 {children}
             </main>
             {/* Main */}

@@ -16,12 +16,12 @@ const CustomDataTable = () => {
     return (
         <div className='mt-8'>
 
-            <h2 className='text-xl font-bold mb-5'>Recent Orders</h2>
+            <h2 className='text-xl font-bold mb-5 dark:text-white text-slate-800'>Recent Orders</h2>
 
             {/* table */}
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-black">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-black ">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-black">
-                    <thead className="text-xs text-gray-200 uppercase bg-gray-800 dark:bg-gray-700 dark:text-gray-400">
+                    <thead className="text-xs text-gray-200 uppercase bg-gray-400 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="p-4">
                                 <div className="flex items-center">
@@ -53,7 +53,7 @@ const CustomDataTable = () => {
                     <tbody>
                         {
                             currentDisplayData.map((d, i) => (
-                                <tr key={d.id} className="bg-gray-900 border-gray-700 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-800">
+                                <tr key={d.id} className="bg-gray-50 border-gray-300 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700">
                                     <td className="w-4 p-4">
                                         <div className="flex items-center">
                                             <input id={`checkbox-table-search-${i}`} type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
@@ -63,9 +63,9 @@ const CustomDataTable = () => {
                                     <th scope="row" className='px-6 py-4'>
                                         {d.id}
                                     </th>
-                                    <th scope="row" className='px-6 py-4'>
+                                    <td className='px-6 py-4'>
                                         {d.first_name}
-                                    </th>
+                                    </td>
                                     <td className="px-6 py-4">
                                         {d.last_name}
                                     </td>
@@ -86,10 +86,10 @@ const CustomDataTable = () => {
                     </tbody>
                 </table>
 
-                <nav className="flex items-center flex-column flex-wrap md:flex-row justify-between pt-4" aria-label="Table navigation">
-                    <span className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing
-                    <span className="font-semibold text-gray-200"> {itemsStart}-{itemsEnd}</span> of
-                        <span className="font-semibold text-gray-200"> {data.length}</span>
+                <nav className="px-2 dark:px-0 py-3 flex items-center flex-column flex-wrap md:flex-row justify-between pt-4 bg-white dark:bg-gray-950" aria-label="Table navigation">
+                    <span className="text-sm font-normal text-gray-800 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">Showing
+                    <span className="font-semibold text-gray-800 dark:text-gray-200"> {itemsStart}-{itemsEnd}</span> of
+                        <span className="font-semibold text-gray-800 dark:text-gray-200"> {data.length}</span>
                     </span>
 
                     <ul className="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
@@ -97,7 +97,7 @@ const CustomDataTable = () => {
                             <button
                                 onClick={() => setCurrentPage(currentPage-1)}
                                 disabled={currentPage === 1}
-                                className="flex items-center justify-center px-3 h-8 ms-0 text-gray-500 bg-gray-800 border border-gray-600 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                className="flex items-center justify-center px-3 h-8 ms-0 text-gray-500 bg-white  border border-gray-600 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
                             >
                                 Previous
                             </button>
@@ -110,7 +110,7 @@ const CustomDataTable = () => {
                                         <button
                                             onClick={() => setCurrentPage(index + 1)}
                                             disabled={currentPage === index + 1}
-                                            className={`${currentPage - 1 == index ? "bg-gray-700" : ""} flex items-center justify-center px-3 h-8 leading-tight text-gray-400 border border-gray-600 hover:bg-gray-700 hover:text-gray-400 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white`}
+                                            className={`${currentPage - 1 == index ? "bg-gray-400 dark:bg-gray-800" : ""}  flex items-center justify-center px-3 h-8 leading-tight text-gray-800 border border-gray-600 hover:bg-gray-500 hover:text-white dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700`}
                                         >
                                         {index +1}
                                         </button>
@@ -123,7 +123,7 @@ const CustomDataTable = () => {
                             <button
                                 onClick={() => setCurrentPage(currentPage+1)}
                                 disabled={currentPage === numberOfPages}
-                                className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-gray-800 border border-gray-600 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                className="flex items-center justify-center px-3 h-8 leading-tight bg-white text-gray-500 border border-gray-600 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-slate-700 dark:hover:text-white"
                             >
                                 Next
                             </button>

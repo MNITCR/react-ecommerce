@@ -30,8 +30,8 @@ const BestSellingProductChart = () => {
     };
 
     return (
-        <div className='bg-slate-700 p-8 rounded-lg'>
-            <h2 className='text-xl font-bold'>Best Selling Charts</h2>
+        <div className='bg-slate-50 shadow-xl dark:bg-slate-700 p-8 rounded-lg'>
+            <h2 className='text-xl font-bold text-slate-800 dark:text-slate-50'>Best Selling Charts</h2>
             {/* Chart */}
             <Pie data={data}/>
         </div>
